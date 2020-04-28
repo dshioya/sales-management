@@ -1,4 +1,4 @@
-const env = require('./env/development.json')
+const env = require(`./env/${process.env.NODE_ENV}.json`)
 
 module.exports = {
   mode: 'spa',

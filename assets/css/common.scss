@@ -1,0 +1,36 @@
+.page-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #98B496;
+
+  .page-title {
+    color: $--color-primary;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  .page-body {
+    flex: 1;
+    position: relative;
+
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

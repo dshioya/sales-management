@@ -1,6 +1,10 @@
 const env = require('./env/development.json')
 
 module.exports = {
+  server: {
+    port: 80
+  },
+
   mode: 'spa',
   /*
    ** Headers of the page

@@ -1,7 +1,7 @@
 {
-  "name": "crm",
+  "name": "sales-management",
   "version": "1.0.0",
-  "description": "ElementUI 顧客管理システム フロントエンド サンプルプロジェクト",
+  "description": "Nuxt.js + ElementUI 販売管理システム フロントエンド サンプルプロジェクト",
   "author": "d.shioya",
   "private": true,
   "scripts": {
@@ -9,7 +9,8 @@
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",

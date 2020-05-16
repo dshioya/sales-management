@@ -1,0 +1,81 @@
+{
+  "total": 100,
+  "items": [
+    {
+      "id": 1,
+      "no": "1010000001",
+      "mid": "1000000001",
+      "name": "田中 一郎",
+      "mailAddress": "tanaka1@example.com",
+      "postalCode": "8900052",
+      "address": "鹿児島県鹿児島市上之園24-23 1F",
+      "tel": "0992658123",
+      "fax": "0992658125",
+      "nearestStore": "本店",
+      "isLargeCustomer": true,
+      "isHardCustomer": false,
+      "isBan": false
+    },
+    {
+      "id": 2,
+      "no": "2010000001",
+      "mid": "1000000002",
+      "name": "田中 二郎",
+      "mailAddress": "tanaka2@example.com",
+      "postalCode": "8900001",
+      "address": "鹿児島県鹿児島市○○1-2-3",
+      "tel": "09011111111",
+      "fax": null,
+      "nearestStore": "星ヶ峯支店",
+      "isLargeCustomer": false,
+      "isHardCustomer": false,
+      "isBan": false
+    },
+    {
+      "id": 3,
+      "no": "2020000001",
+      "mid": "1000000003",
+      "name": "田中 三郎",
+      "mailAddress": "tanaka3@example.com",
+      "postalCode": "8900001",
+      "address": "鹿児島県鹿児島市○○1-2-3",
+      "tel": "09011111111",
+      "fax": null,
+      "nearestStore": "上之園支店",
+      "isLargeCustomer": false,
+      "isHardCustomer": false,
+      "isBan": false
+    },
+    {
+      "id": 4,
+      "no": "1010000002",
+      "mid": "1000000004",
+      "name": "田中 四郎",
+      "mailAddress": "tanaka4@example.com",
+      "postalCode": "8900001",
+      "address": "鹿児島県鹿児島市○○1-2-3",
+      "tel": "09011111111",
+      "fax": null,
+      "nearestStore": null,
+      "isLargeCustomer": false,
+      "isHardCustomer": false,
+      "isBan": true,
+      "banned": "2020-05-01"
+    },
+    {
+      "id": 5,
+      "no": "1010000003",
+      "mid": "1000000005",
+      "name": "田中 五郎",
+      "mailAddress": "tanaka5@example.com",
+      "postalCode": "8900001",
+      "address": "鹿児島県鹿児島市○○1-2-3",
+      "tel": "09011111111",
+      "fax": null,
+      "nearestStore": null,
+      "isLargeCustomer": false,
+      "isHardCustomer": true,
+      "isBan": false
+    }
+  ]
+}

@@ -9,6 +9,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development quasar dev",
+    "mock": "cross-env NODE_ENV=development nodemon server/app.js",
     "build": "quasar build",
     "start": "cross-env NODE_ENV=production node server/app.js",
     "heroku-postbuild": "yarn && yarn build",
@@ -32,7 +33,8 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.1.2"
+    "eslint-plugin-vue": "^6.1.2",
+    "nodemon": "^2.0.4"
   },
   "engines": {
     "node": ">= 10.18.1",

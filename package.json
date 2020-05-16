@@ -9,8 +9,9 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development quasar dev",
-    "start": "cross-env NODE_ENV=production quasar dev",
-    "heroku-postbuild": "yarn install",
+    "build": "quasar build",
+    "start": "cross-env NODE_ENV=production node server/app.js",
+    "heroku-postbuild": "yarn && yarn build",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
     "test": "echo \"No test specified\" && exit 0"
   },

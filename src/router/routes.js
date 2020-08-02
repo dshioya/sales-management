@@ -12,7 +12,13 @@ const routes = [
     path: '/customer',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/customer/Index.vue') },
+      { path: '', component: () => import('pages/customer/Index.vue') }
+    ]
+  },
+  {
+    path: '/customer',
+    component: () => import('layouts/NoMenuLayout.vue'),
+    children: [
       { path: ':id', component: () => import('pages/customer/Detail.vue') }
     ]
   },

@@ -1,9 +1,7 @@
 import axios from 'axios'
 
-export async function load ({ commit }, conditions = {}) {
-  await axios.get('/api/customer', {
-    params: conditions
-  })
+export async function load ({ commit }) {
+  await axios.get('/api/shop/options')
     .then(res => {
       commit('setData', res.data)
     })

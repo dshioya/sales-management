@@ -8,7 +8,10 @@
       flat
     >
       <template v-slot:body="props">
-        <q-tr :props="props">
+        <q-tr
+          :props="props"
+          @dblclick.native="onRowDblClick(props)"
+        >
           <q-td key="no">
             {{ props.row.no }}
           </q-td>
@@ -161,13 +164,10 @@ export default {
     }
   },
 
-  created () {
-    this.load()
-  },
-
   methods: {
-    load () {
-      this.$store.dispatch('customerList/load')
+    onRowDblClick ({ row }) {
+      const routeData = this.$router.resolve({ path: `/customer/${row.no}` })
+      window.open(routeData.href, `customer_${row.no}`)
     }
   }
 }

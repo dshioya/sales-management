@@ -2,7 +2,7 @@
   <q-page id="customer-list-page">
     <div class="page-inner row items-stretch">
       <div class="flex-1 column">
-        <customer-header @clickDetailSearchButton="onClickDetailSearchButton" />
+        <customer-header @detail-search-button-click="onDetailSearchButtonClick" />
         <customer-table class="flex-1" />
       </div>
       <transition
@@ -12,7 +12,11 @@
         @before-enter="onBeforeEnterTransition"
         @after-leave="onAfterLeaveTransition"
       >
-        <customer-detail-search v-show="visibleDetailSearchPanel" />
+        <customer-detail-search
+          v-show="visibleDetailSearchPanel"
+          @close-button-click="onCustomerDetailSearchCloseButtonClick"
+          @search-button-click="onCustomerDetailSearchSearchButtonClick"
+        />
       </transition>
     </div>
   </q-page>
@@ -30,6 +34,10 @@ export default {
     CustomerDetailSearch
   },
 
+  meta: {
+    title: '顧客一覧'
+  },
+
   // preFetch ({ redirect }) {
   //   console.log(arguments)
   //   redirect('/order')
@@ -37,13 +45,33 @@ export default {
 
   data () {
     return {
-      visibleDetailSearchPanel: false
+      visibleDetailSearchPanel: false,
+      hardCustomerOptions: [],
+      banOptions: []
     }
   },
 
+  created () {
+    this.load()
+  },
+
   methods: {
-    onClickDetailSearchButton () {
+    async load (conditions) {
+      this.$q.loading.show()
+
+      await this.$store.dispatch('customerList/load', conditions)
+
+      this.$q.loading.hide()
+    },
+
+    loadOptions () {
+      this.$store.dispatch('shopOptions/load')
+    },
+
+    onDetailSearchButtonClick () {
       this.visibleDetailSearchPanel = !this.visibleDetailSearchPanel
+
+      this.loadOptions()
     },
 
     onBeforeEnterTransition () {
@@ -52,6 +80,14 @@ export default {
 
     onAfterLeaveTransition () {
       document.body.style.overflow = ''
+    },
+
+    onCustomerDetailSearchCloseButtonClick () {
+      this.visibleDetailSearchPanel = false
+    },
+
+    onCustomerDetailSearchSearchButtonClick: function (conditions) {
+      this.load(conditions)
     }
   }
 }

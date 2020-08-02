@@ -8,17 +8,6 @@
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      :width="200"
-      content-class="bg-grey-1"
-    >
-      <nav-menu />
-    </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -26,19 +15,7 @@
 </template>
 
 <script>
-import NavMenu from 'components/nav/Menu'
-
 export default {
-  name: 'MainLayout',
-
-  components: {
-    NavMenu
-  },
-
-  data () {
-    return {
-      leftDrawerOpen: false
-    }
-  }
+  name: 'NoMenuLayout'
 }
 </script>

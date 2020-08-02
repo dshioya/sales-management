@@ -14,7 +14,7 @@
       label="詳細検索"
       class="q-ml-sm"
       unelevated
-      @click="onClickDetailSearchButton"
+      @click="onDetailSearchButtonClick"
     />
   </q-toolbar>
 </template>
@@ -28,8 +28,8 @@ export default {
   },
 
   methods: {
-    onClickDetailSearchButton () {
-      this.$emit('clickDetailSearchButton')
+    onDetailSearchButtonClick () {
+      this.$emit('detail-search-button-click')
     }
   }
 }

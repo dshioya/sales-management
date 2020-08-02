@@ -55,7 +55,10 @@ module.exports = function (/* ctx */) {
       directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Meta',
+        'Loading'
+      ]
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie

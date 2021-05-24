@@ -12,6 +12,7 @@
     "mock": "cross-env NODE_ENV=development nodemon server/app.js",
     "build": "quasar build",
     "start": "cross-env NODE_ENV=production node server/app.js",
+    "vercel-build": "yarn && yarn build",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
     "test": "echo \"No test specified\" && exit 0"
   },
